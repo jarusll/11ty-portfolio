@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/jarusll/portfolio#readme",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0"
+    "@11ty/eleventy": "^1.0.0",
+    "@jarusll/user-avatar": "^1.2.0"
   }
 }
