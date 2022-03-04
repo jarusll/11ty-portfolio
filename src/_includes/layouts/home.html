@@ -1,7 +1,19 @@
 {% extends "layouts/base.html" %}
 {% block content %}
+<style>
+    @media screen and (min-width: 1000px) {
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        article {
+            width: 60%
+        } 
+    }
+</style>
 <article>
-    <user-avatar name="SURAJ YADAV" image="https://picsum.photos/200" title="Oddball Software Creator and a Hobbyist Artist"></user-avatar>
     {{ content | safe }}
 </article>
 {% endblock %}
