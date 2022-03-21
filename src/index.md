@@ -8,8 +8,8 @@ layout: layouts/home.html
     title="Oddball Software Creator and a Hobbyist Artist">
 </user-avatar>
 
+<hr />
+
 {% for post in collections.posts %}
 <a href="{{post.url}}">{{post.data.title}}</a>
 {% endfor %}
-
-<hr />
