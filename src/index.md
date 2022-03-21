@@ -7,3 +7,7 @@ layout: layouts/home.html
     image="https://picsum.photos/200" 
     title="Oddball Software Creator and a Hobbyist Artist">
 </user-avatar>
+
+{% for post in collections.posts %}
+<a href="{{post.url}}">{{post.data.title}}</a>
+{% endfor %}
