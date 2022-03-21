@@ -1,19 +1,5 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-<style>
-    @media screen and (min-width: 1000px) {
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        article {
-	    min-height: calc(100vh - 100px);
-            width: 60%;
-        } 
-    }
-</style>
 <article>
     {{ content | safe }}
 </article>
