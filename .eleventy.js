@@ -1,6 +1,9 @@
 module.exports = config => {
 
-    config.addPassthroughCopy("./src/main.css");
+    config.addPassthroughCopy({
+	"./src/main.css": "main.css",
+	"./src/posts/images/*": "images"
+    });
 
     config.addCollection("posts", function(collectionApi) {
 	return collectionApi.getFilteredByGlob("./src/posts/*.md");
