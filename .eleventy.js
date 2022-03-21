@@ -7,17 +7,18 @@ module.exports = config => {
     });
 
     // set markdown footnote processor
-    let markdownIt = require("markdown-it");
-    let markdownItFootnote = require("markdown-it-footnote");
-    
-    let options = {
+    const markdownIt = require("markdown-it");
+    const markdownItFootnote = require("markdown-it-footnote");
+    const namedCodeBlocks = require('markdown-it-named-code-blocks');
+ 
+    const options = {
 	html: true, // Enable HTML tags in source
 	breaks: true,  // Convert '\n' in paragraphs into <br>
 	linkify: true // Autoconvert URL-like text to links
     };
     
     // configure the library with options
-    let markdownLib =  markdownIt(options).use(markdownItFootnote);
+    const markdownLib =  markdownIt(options).use(markdownItFootnote).use(namedCodeBlocks);
     // set the library to process markdown files
     config.setLibrary("md", markdownLib);
 
