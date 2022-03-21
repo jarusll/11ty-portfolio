@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    </style>
+    <title>Why I like Smalltalk - Part 1 of 100 - Documentation</title>
+    <link rel="stylesheet" href="/main.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@jarusll/user-avatar@1.2.0/src/index.min.js"></script>
+</head>
+
+<body>
+    <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+    </ul>
+</nav>
+
+    
+<style>
+    @media screen and (min-width: 1000px) {
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        article {
+            width: 60%
+        } 
+    }
+</style>
+<article>
+    <h1>Why I like Smalltalk: Part 1 of 100 - Documentation</h1>
+<h2>Smalltalk Documentation follows CRC<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>(Class, Responsibilities &amp; Collaborators)</h2>
+<ul>
+<li>For those who don't know what CRC is, it's a tool that helps design objects.</li>
+<li>A CRC card consists of Class name at the top, responsibilities on the left side &amp; collaborators on the right.</li>
+<li>Since a card models only one object, it enables rapid prototyping. It is feasible to go through many iterations before settling on an implementation.</li>
+<li><img src="/images/crc-example.gif" alt="A sample CRC card"></li>
+</ul>
+<h2>Smalltalk Documentation talks to you</h2>
+<p>I noticed this in Pharo's<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> documentation.<br>
+Classes have comments as they talk to you. They give you an overview of what they are and what they can do. They also tell you how you get started with them with some examples.</p>
+<h3>Example from Pharo's documentation for <code>Point</code></h3>
+<pre><code>I represent an x,y pair of numbers usually designating a location on the screen.
+
+My instances are created either using the message `@` or `x:y:` or `r:degrees:` as follows:
+
+```
+| pt |
+pt := 10@20.
+pt x 
+&gt;&gt;&gt; 10
+pt y
+&gt;&gt;&gt; 20 			 
+```
+
+```
+| pt |
+pt := Point x: 10 y: 20.
+pt x 
+&gt; 10
+pt y
+&gt; 20 			 
+```
+
+I define many nice messages that deal with point such as: 
+- arithmetic such as \+, \*, reciprocal, min, abs,
+- comparison \&lt;, \&lt;=, \=, \&gt;, \&gt;=, closeTo: 
+- geometry such as sideOf:, to:intersects:to:, 
+- polar coordinates,
+- extent such as scaleTo:
+- transformation such as negated, translatedBy:, scaleBy:
+- rounding with roundTo:, roundUpTo:, truncateTo:, truncated
+</code></pre>
+<p>How cool is that? That makes me wanna take Point for a coffee.<br>
+I have adopted this style of documentation for just about everything.</p>
+<h2>Inbuilt support for documentation</h2>
+<p>The Smalltalk IDE's are one of the most mature IDEs I have ever used. They have inbuilt support for documentation along with the class. Although this might be more of an IDE feature, it has been since the beginning(probably).</p>
+<p><img src="/images/documentation-in-pharo.png" alt="Documentation in Pharo"></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.agilemodeling.com/artifacts/crcModel.htm">http://www.agilemodeling.com/artifacts/crcModel.htm</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://pharo.org">https://pharo.org</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+
+    <style>
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }
+    a {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto 1rem;
+        text-decoration: none;
+        color: black;
+    }
+</style>
+<footer>
+    
+    <a href="https://github.com/jarusll" target="_blank">Github</a>
+    
+    <a href="https://www.linkedin.com/in/suraj-yadav-98794b62/" target="_blank">LinkedIn</a>
+    
+    <a href="mailto:ysuraj877@gmail.com" target="_blank">Email</a>
+    
+</footer>
+
+</body>
+
+</html>
