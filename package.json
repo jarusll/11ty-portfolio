@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-	"serve": "npx eleventy --serve",
-	"build": "npx eleventy"
+	"serve": "yarn eleventy --serve",
+	"build": "yarn eleventy"
     },
     "repository": {
 	"type": "git",
