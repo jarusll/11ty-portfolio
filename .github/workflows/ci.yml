@@ -18,7 +18,9 @@ jobs:
     - name: yarn build
       run: |
         yarn build
-    - name: list pwd
-      run: |
-        echo pwd
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages
+        folder: docs
         
