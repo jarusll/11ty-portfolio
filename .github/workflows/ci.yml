@@ -6,19 +6,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    uses: actions/checkout@v1
-    - name: Use Node.js 14.18.1
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@master
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@master
       with:
-        node-version: 14.18.1
+        node-version: 14.x
 
-      - name: yarn install
-        run: |
-          yarn install
-      - name: yarn build
-        run: |
-          yarn build
-      - name: list pwd
-        run: |
-          echo pwd
+    - name: yarn install
+      run: |
+        yarn install
+    - name: yarn build
+      run: |
+        yarn build
+    - name: list pwd
+      run: |
+        echo pwd
         
