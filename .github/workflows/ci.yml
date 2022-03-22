@@ -1,0 +1,30 @@
+name: build page
+
+on: 
+  push:
+    branches:    
+      - master 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    
+    - name: yarn install
+      run: |
+        yarn install
+    - name: yarn build
+      run: |
+        yarn run build
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
