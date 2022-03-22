@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I like Smalltalk - Part 2 of 100 - Intention revealing names</title>
+    <link rel="stylesheet" href="/main.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@jarusll/user-avatar@1.2.0/src/index.min.js"></script>
+</head>
+
+<body>
+    <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+    </ul>
+</nav>
+
+    
+<article>
+    <h1>Why I like Smalltalk: Part 2 of 100 - Intention revealing names<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h1>
+<p>A properly named message communicates well. The developer does not have to look for the implementation.<br>
+This has more to do with design, but it has been in Smalltalk's genes since its inception.</p>
+<p>What is an intention-revealing method?<br>
+A message which</p>
+<ul>
+<li>Reveals intention</li>
+<li>Hides implementation</li>
+<li>Gives return type hint</li>
+</ul>
+<p>Intention revealing names answer <code>what</code> instead of <code>how</code>.</p>
+<p>Let's decide on a name for a method which looks up by a <code>key</code> in a <code>Dictionary</code></p>
+<ul>
+<li><code>binarySearchByKey:</code> - Bad, reveals how it works, doesn't hint at return type</li>
+<li><code>searchValueAt:</code> - Communicates what it does, Good</li>
+<li><code>valueAt:</code> - Able to communicate while being shorter, Better</li>
+<li><code>at:</code> - Best, takes Dictionary in context as key-value pairs</li>
+</ul>
+<p>This might seem a very simple pattern, but If you can make this happen in your codebase, you are a god.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://wiki.c2.com/?IntentionRevealingNames">https://wiki.c2.com/?IntentionRevealingNames</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+
+    <hr />
+<footer>
+    
+    <a href="https://github.com/jarusll" target="_blank">Github</a>
+    
+    <a href="https://www.linkedin.com/in/suraj-yadav-98794b62/" target="_blank">LinkedIn</a>
+    
+    <a href="mailto:ysuraj877@gmail.com" target="_blank">Email</a>
+    
+</footer>
+
+</body>
+
+</html>
