@@ -19,6 +19,11 @@ jobs:
     - name: yarn install
       run: |
         yarn install
+
+    - name: Clone posts
+      working-directory: ./src
+      run: |
+        git clone https://github.com/jarusll/posts.git
     - name: yarn build
       run: |
         yarn run build
