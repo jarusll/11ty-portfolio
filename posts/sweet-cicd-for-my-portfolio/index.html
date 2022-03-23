@@ -20,7 +20,8 @@
 
     
 <article>
-  <h1>What my current setup is?</h1>
+  <h1>Sweet CICD for my Portfolio</h1>
+<h2>What my current setup is?</h2>
 <p>My portfolio is hosted on Github pages. Github pages has support for selecting the directory to host.<br>
 The options are &quot;root&quot; or &quot;/docs&quot; directories.</p>
 <p>I build my portfolio locally in &quot;/docs&quot; directory and push it. I chose &quot;/docs&quot; to host in Github pages on master branch.</p>
@@ -29,9 +30,9 @@ The options are &quot;root&quot; or &quot;/docs&quot; directories.</p>
 <li>The build is in master repo</li>
 <li>I have to track the build in git</li>
 </ul>
-<h1>What I want?</h1>
+<h2>What I want?</h2>
 <p>I want to solve both problems. I do not want to track the build and I want it to be in seperate repo.</p>
-<h1>My weapon of choice - Github Actions</h1>
+<h2>My weapon of choice - Github Actions</h2>
 <p>It has good documentation and I got comfortable with it very fast. There are 4 entities in a GA script.</p>
 <h3>Events</h3>
 <p>When to trigger the script.</p>
@@ -41,7 +42,7 @@ The options are &quot;root&quot; or &quot;/docs&quot; directories.</p>
 <p>Custom applications made to achieve specific functionality. You can write your own actions.</p>
 <h3>Runners</h3>
 <p>Environment to run the workflow in. Github provides Windows, MacOS, Ubuntu Linux. You can host your own runners as well.</p>
-<h1>Automating it</h1>
+<h2>Automating it</h2>
 <p>Lets start by naming our github action first.</p>
 <pre class="named-fence-block"><code class="language-github">name: build &amp; push to gh-pages branch
 </code><div class="named-fence-filename">name</div></pre>
@@ -85,14 +86,14 @@ This action copies the build dir <code>/docs</code> to <code>gh-pages</code> rep
 
 </code><div class="named-fence-filename">deploy</div></pre>
 <p>After the build has been made and copied to <code>gh-pages</code>, I can enable to Github pages for my repo for <code>gh-pages</code> branch on <code>root</code> directory.</p>
-<h1>An issue I ran into</h1>
+<h2>An issue I ran into</h2>
 <p>I have my <code>posts</code> as a git submodule in my portfolio repo. When <code>actions/checkout</code> checked out my portfolio repo, it did not fetch the submodule <code>posts</code>. As a result, no posts were rendered in the build. I solved this by manually cloning the <code>posts</code> repo.</p>
 <pre class="named-fence-block"><code class="language-github">    - name: Clone posts
       working-directory: ./src
       run: |
         git clone https://github.com/jarusll/posts.git
 </code><div class="named-fence-filename">clone</div></pre>
-<h1>Final script</h1>
+<h2>Final script</h2>
 <pre class="named-fence-block"><code class="language-github">name: build page
 
 on: 

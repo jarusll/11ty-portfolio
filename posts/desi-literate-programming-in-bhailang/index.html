@@ -33,6 +33,51 @@ Its a programming language based on Indian slangs, which makes it fun &amp; acce
 <p>Also according to the documentation, &quot;<code>hi bhai</code> is the entrypoint for the program and all program must end with <code>bye bhai</code>. Anything outside of it will be ignored&quot;. Which means you can write things like documentation, problem statement and things related to the program anywhere outside the program body.</p>
 <h2>Sample programs</h2>
 <p>I wont explain the syntax, its trivial. They are just syntactic sugars for programming constructs but accessible.</p>
+<p>Lets go with classics.</p>
+<h3>Fizzbuzz</h3>
+<pre class="named-fence-block"><code class="language-bhailang">hi bhai
+
+bhai ye hai counter = 1;
+bhai ye hai upperbound = 100;
+
+jab tak bhai (counter &lt;= upperbound){
+
+  agar bhai (counter % 15 == 0){
+    bol bhai counter, &quot;FizzBuzz&quot;;
+  } nahi to bhai (counter % 3 == 0){
+    bol bhai counter, &quot;Fizz&quot;;
+  } nahi to bhai (counter % 5 == 0){
+    bol bhai counter, &quot;Buzz&quot;;
+  } warna bhai {
+    bol bhai counter;
+  }
+
+  counter = counter + 1;
+}
+
+bye bhai
+</code><div class="named-fence-filename">fizzbuzz.bl</div></pre>
+<p>Now for number 2, let's go with something math isn't quite ready for.</p>
+<h3>Collatz function</h3>
+<pre class="named-fence-block"><code class="language-bhailang">hi bhai
+
+bhai ye hai input = 10;
+bhai ye hai counter = 0;
+
+  jab tak bhai(input != 1){
+    agar bhai(input % 2 == 0){
+      input = input / 2;
+    } warna bhai {
+      input = 3 * input + 1;
+    }
+
+    counter = counter + 1;
+  }
+
+  bol bhai counter;
+
+bye bhai
+</code><div class="named-fence-filename">collatz.bl</div></pre>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
