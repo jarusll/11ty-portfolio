@@ -36,6 +36,8 @@ nav ul {
 .named-fence-block {
     position: relative;
     padding-top: 2em;
+    background: lightgray !important;
+    padding: 1.2rem;
 }
 
 .named-fence-filename {
@@ -44,8 +46,8 @@ nav ul {
     left: 0;
     padding: 0 4px;
     font-weight: bold;
-    color: #000000;
-    background: #c0c0c0;
+    color: white;
+    background: #181818;
     opacity: 0.6;
 }
 
