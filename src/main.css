@@ -68,16 +68,35 @@ a {
     color: black;
 }
 
-/* responsive */
-@media screen and (min-width: 1000px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+/* desktop style */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+article {
+    min-height: calc(100vh - 8rem);
+    width: 50%;
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
     article {
 	min-height: calc(100vh - 8rem);
-        width: 60%;
-    } 
+        width: 95%;
+    }
+    img {
+	max-width: 350px;
+	object-fit: contain !important;
+    }
 }
+
+.thanks {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
