@@ -43,20 +43,20 @@ The options are &quot;root&quot; or &quot;/docs&quot; directories.</p>
 <p>Environment to run the workflow in. Github provides Windows, MacOS, Ubuntu Linux. You can host your own runners as well.</p>
 <h1>Automating it</h1>
 <p>Lets start by naming our github action first.</p>
-<pre><code>name: build &amp; push to gh-pages branch
-</code></pre>
+<pre class="named-fence-block"><code class="language-github">name: build &amp; push to gh-pages branch
+</code><div class="named-fence-filename">name</div></pre>
 <p>I want the workflow to trigger when I push any change on master branch.</p>
-<pre><code>on: 
+<pre class="named-fence-block"><code class="language-github">on: 
   push:
     branches:
       - master 
-</code></pre>
+</code><div class="named-fence-filename">on</div></pre>
 <p>The steps to build is pretty simple, I want to run the workflow on ubuntu-linux.</p>
 <p>The Github action <code>actions/setup-node</code> is pretty self explanatory.<br>
 The Node version on my local is 14.18.1, so I decided to go with 14.x.</p>
 <p>The Github action <a href="https://stackoverflow.com/questions/67131269/github-jobs-what-is-use-actions-checkout"><code>actions/checkout</code></a> checks out your repo.</p>
 <p>After that its just installing the dependencies by <code>yarn install</code> and then building by <code>yarn build</code></p>
-<pre><code>jobs:
+<pre class="named-fence-block"><code class="language-github">jobs:
   build:
 
     runs-on: ubuntu-latest
@@ -73,27 +73,27 @@ The Node version on my local is 14.18.1, so I decided to go with 14.x.</p>
     - name: yarn build
       run: |
         yarn run build
-</code></pre>
+</code><div class="named-fence-filename">jobs</div></pre>
 <p>After building, I want to push the build directory to <code>gh-pages</code> repo.<br>
 There is an action available for it called <a href="https://github.com/JamesIves/github-pages-deploy-action">JamesIves/github-pages-deploy-action</a>.<br>
 This action copies the build dir <code>/docs</code> to <code>gh-pages</code> repo.</p>
-<pre><code>    - name: Deploy
+<pre class="named-fence-block"><code class="language-github">    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
         branch: gh-pages # The branch the action should deploy to.
         folder: docs # The folder the action should deploy.
 
-</code></pre>
+</code><div class="named-fence-filename">deploy</div></pre>
 <p>After the build has been made and copied to <code>gh-pages</code>, I can enable to Github pages for my repo for <code>gh-pages</code> branch on <code>root</code> directory.</p>
 <h1>An issue I ran into</h1>
 <p>I have my <code>posts</code> as a git submodule in my portfolio repo. When <code>actions/checkout</code> checked out my portfolio repo, it did not fetch the submodule <code>posts</code>. As a result, no posts were rendered in the build. I solved this by manually cloning the <code>posts</code> repo.</p>
-<pre><code>    - name: Clone posts
+<pre class="named-fence-block"><code class="language-github">    - name: Clone posts
       working-directory: ./src
       run: |
         git clone https://github.com/jarusll/posts.git
-</code></pre>
+</code><div class="named-fence-filename">clone</div></pre>
 <h1>Final script</h1>
-<pre><code>name: build page
+<pre class="named-fence-block"><code class="language-github">name: build page
 
 on: 
   push:
@@ -129,7 +129,7 @@ jobs:
         branch: gh-pages # The branch the action should deploy to.
         folder: docs # The folder the action should deploy.
 
-</code></pre>
+</code><div class="named-fence-filename">cicd.yml</div></pre>
 
 </article>
 
