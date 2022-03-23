@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet CICD for my Portfolio</title>
+    <link rel="stylesheet" href="/main.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@jarusll/user-avatar@1.2.0/src/index.min.js"></script>
+</head>
+
+<body>
+    <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+    </ul>
+</nav>
+
+    
+<article>
+  <h1>What my current setup is?</h1>
+<p>My portfolio is hosted on Github pages. Github pages has support for selecting the directory to host.<br>
+The options are &quot;root&quot; or &quot;/docs&quot; directories.</p>
+<p>I build my portfolio locally in &quot;/docs&quot; directory and push it. I chose &quot;/docs&quot; to host in Github pages on master branch.</p>
+<p>This setup is a bit tedious. There are 2 problems.</p>
+<ul>
+<li>The build is in master repo</li>
+<li>I have to track the build in git</li>
+</ul>
+<h1>What I want?</h1>
+<p>I want to solve both problems. I do not want to track the build and I want it to be in seperate repo.</p>
+<h1>My weapon of choice - Github Actions</h1>
+<p>It has good documentation and I got comfortable with it very fast. There are 4 entities in a GA script.</p>
+<h3>Events</h3>
+<p>When to trigger the script.</p>
+<h3>Jobs</h3>
+<p>Steps to run in the script. It could be a shell script or an Action.</p>
+<h3>Actions</h3>
+<p>Custom applications made to achieve specific functionality. You can write your own actions.</p>
+<h3>Runners</h3>
+<p>Environment to run the workflow in. Github provides Windows, MacOS, Ubuntu Linux. You can host your own runners as well.</p>
+<h1>Automating it</h1>
+<p>Lets start by naming our github action first.</p>
+<pre><code>name: build &amp; push to gh-pages branch
+</code></pre>
+<p>I want the workflow to trigger when I push any change on master branch.</p>
+<pre><code>on: 
+  push:
+    branches:
+      - master 
+</code></pre>
+<p>The steps to build is pretty simple, I want to run the workflow on ubuntu-linux.</p>
+<p>The Github action <code>actions/setup-node</code> is pretty self explanatory.<br>
+The Node version on my local is 14.18.1, so I decided to go with 14.x.</p>
+<p>The Github action <a href="https://stackoverflow.com/questions/67131269/github-jobs-what-is-use-actions-checkout"><code>actions/checkout</code></a> checks out your repo.</p>
+<p>After that its just installing the dependencies by <code>yarn install</code> and then building by <code>yarn build</code></p>
+<pre><code>jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    
+    - name: yarn install
+      run: |
+        yarn install
+    - name: yarn build
+      run: |
+        yarn run build
+</code></pre>
+<p>After building, I want to push the build directory to <code>gh-pages</code> repo.<br>
+There is an action available for it called <a href="https://github.com/JamesIves/github-pages-deploy-action">JamesIves/github-pages-deploy-action</a>.<br>
+This action copies the build dir <code>/docs</code> to <code>gh-pages</code> repo.</p>
+<pre><code>    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
+
+</code></pre>
+<p>After the build has been made and copied to <code>gh-pages</code>, I can enable to Github pages for my repo for <code>gh-pages</code> branch on <code>root</code> directory.</p>
+<h1>An issue I ran into</h1>
+<p>I have my <code>posts</code> as a git submodule in my portfolio repo. When <code>actions/checkout</code> checked out my portfolio repo, it did not fetch the submodule <code>posts</code>. As a result, no posts were rendered in the build. I solved this by manually cloning the <code>posts</code> repo.</p>
+<pre><code>    - name: Clone posts
+      working-directory: ./src
+      run: |
+        git clone https://github.com/jarusll/posts.git
+</code></pre>
+<h1>Final script</h1>
+<pre><code>name: build page
+
+on: 
+  push:
+    branches:    
+      - master 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    
+    - name: yarn install
+      run: |
+        yarn install
+
+    - name: Clone posts
+      working-directory: ./src
+      run: |
+        git clone https://github.com/jarusll/posts.git
+    - name: yarn build
+      run: |
+        yarn run build
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
+
+</code></pre>
+
+</article>
+
+<h3 class="thanks">Thanks for coming to my site.</h3>
+
+
+    <hr />
+<footer>
+    
+    <a href="https://github.com/jarusll" target="_blank">Github</a>
+    
+    <a href="https://www.linkedin.com/in/suraj-yadav-98794b62/" target="_blank">LinkedIn</a>
+    
+    <a href="mailto:ysuraj877@gmail.com" target="_blank">Email</a>
+    
+</footer>
+
+</body>
+
+</html>
