@@ -40,8 +40,12 @@ layout: layouts/home.html
 </style>
 
 
-<div id="photos">
-{% for image in images.items %}
-<img src="https://picsum.photos/{{image}}">
-{% endfor %}
+<!-- <div id="photos"> -->
+<!-- {% for image in images.items %} -->
+<!-- <img src="https://picsum.photos/{{image}}"> -->
+<!-- {% endfor %} -->
+<!-- </div> -->
+
+<div style="font-size: 5rem; text-align: center !important; margin-top: 2rem;">
+	<span >WIP</span>
 </div>
