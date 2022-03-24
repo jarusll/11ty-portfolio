@@ -1,3 +1,6 @@
 [submodule "src/posts"]
 	path = src/posts
 	url = git@github.com:jarusll/posts.git
+[submodule "src/diary"]
+	path = src/diary
+	url = git@github.com:jarusll/diary.git
