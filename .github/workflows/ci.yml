@@ -1,6 +1,7 @@
 name: build page
 
-on: 
+on:
+  workflow_dispatch:
   push:
     branches:    
       - master 
