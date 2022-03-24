@@ -3,8 +3,6 @@ name: build page
 on:
   workflow_dispatch:
   push:
-    branches:    
-      - master 
 
 jobs:
   build:
