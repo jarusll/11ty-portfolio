@@ -1,5 +1,16 @@
-/* ibm flex & garamond */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=IBM+Plex+Sans&display=swap');
+/* ibm flex ,garamond & jetbrains mono */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=IBM+Plex+Sans&family=JetBrains+Mono&display=swap');
+
+:root {
+    --dark-color: #D5D9D9;
+    --dark-background: #181a1b;
+    --dark-background-shade: #3B4040;
+    --dark-code-background: #162E2A;
+    --light-color: black;
+    --light-background: #FCF9F4;
+    --light-background-shade: #D5D9D9;
+    --light-code-background: #E6C29A;
+}
 
 * {
     box-sizing: border-box;
@@ -14,7 +25,6 @@ hr {
     border: 0;
     clear:both;
     display:block;
-    background-color: black;
     height: 1px;
 }
 
@@ -33,22 +43,21 @@ nav ul {
     align-items: center;
 }
 
+/* code block */
 .named-fence-block {
     position: relative;
-    padding-top: 2em;
-    background: lightgray !important;
     padding: 1.2rem;
+    padding-top: 3em;
+    border-radius: 0 1rem 1rem 1rem;
 }
 
+/* code block name */
 .named-fence-filename {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0 4px;
+    padding: 0.5rem;
     font-weight: bold;
-    color: white;
-    background: #181818;
-    opacity: 0.6;
 }
 
 footer {
@@ -62,12 +71,14 @@ footer a {
     font-family: Arial, Helvetica, sans-serif;
     margin: auto 1rem;
     text-decoration: none;
-    color: black;
 }
 
 a {
     text-decoration: none;
-    color: black;
+}
+
+code {
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
 /* desktop style */
@@ -77,6 +88,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 article {
     min-height: calc(100vh - 8rem);
     width: 50%;
@@ -94,5 +106,44 @@ article {
     }
 }
 
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+    body   {
+	background:  var(--dark-background) !important;
+	color: var(--dark-color) !important;
+    }
+    a {
+	color: var(--dark-color) !important;
+    }
+    hr {
+	background: var(--dark-color)
+    }
+    .named-fence-filename {
+	background: var(--dark-background-shade);
+	color: #91B102;
+    }
+    .named-fence-block {
+	background: var(--dark-code-background);
+    }
+}
 
-
+/* light mode */
+@media (prefers-color-scheme: light){
+    body {
+	background: var(--light-background) !important;
+	color: var(--light-color) !important;
+    }
+    a {
+	color: var(--light-color) !important;
+    }
+    hr {
+	background: var(--light-color)
+    }
+    .named-fence-filename {
+	background: #D4D055 !important;
+	color: black;
+    }
+    .named-fence-block {
+	background: var(--light-code-background);
+    }
+}
