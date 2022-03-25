@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+      with:
+        submodules: true # recursive checkout
+        
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
@@ -21,15 +24,15 @@ jobs:
       run: |
         yarn install
 
-    - name: Clone posts
-      working-directory: ./src
-      run: |
-        git clone https://github.com/jarusll/posts.git
+    # - name: Clone posts
+    #   working-directory: ./src
+    #   run: |
+    #     git clone https://github.com/jarusll/posts.git
 
-    - name: Clone diary
-      working-directory: ./src
-      run: |
-        git clone https://github.com/jarusll/diary.git
+    # - name: Clone diary
+    #   working-directory: ./src
+    #   run: |
+    #     git clone https://github.com/jarusll/diary.git
         
     - name: yarn build
       run: |
