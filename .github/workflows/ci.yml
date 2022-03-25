@@ -2,6 +2,8 @@ name: build page
 
 on:
   workflow_dispatch:
+  repository_dispatch: # build on diary_push
+    types: [diary_push]
   push:
     branches:    
       - master 
