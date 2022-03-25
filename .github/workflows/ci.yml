@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v1
       with:
         ref: master
-        submodules: true # recursive checkout
+        # submodules: true # recursive checkout
         
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
@@ -29,7 +29,9 @@ jobs:
 
     - name: Pull latest submodules
       run: |
-        git pull --recurse-submodules
+        # git pull --recurse-submodules
+        git submodule update --init --recursive
+        git submodule update --remote --merge --recursive
         
     - name: yarn build
       run: |
