@@ -33,37 +33,33 @@
 <p>I noticed this in Pharo's<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> documentation.<br>
 Classes have comments as they talk to you. They give you an overview of what they are and what they can do. They also tell you how you get started with them with some examples.</p>
 <h3>Example from Pharo's documentation for <code>Point</code></h3>
-<pre><code>I represent an x,y pair of numbers usually designating a location on the screen.
+<pre class="named-fence-block"><code class="language-smalltalk">    I represent an x,y pair of numbers usually designating a location on the screen.
 
-My instances are created either using the message `@` or `x:y:` or `r:degrees:` as follows:
+    My instances are created either using the message `@` or `x:y:` or `r:degrees:` as follows:
 
-```
-| pt |
-pt := 10@20.
-pt x 
-&gt;&gt;&gt; 10
-pt y
-&gt;&gt;&gt; 20 			 
-```
+    | pt |
+    pt := 10@20.
+    pt x 
+    &gt;&gt;&gt; 10
+    pt y
+    &gt;&gt;&gt; 20 			 
 
-```
-| pt |
-pt := Point x: 10 y: 20.
-pt x 
-&gt; 10
-pt y
-&gt; 20 			 
-```
+    | pt |
+    pt := Point x: 10 y: 20.
+    pt x 
+    &gt; 10
+    pt y
+    &gt; 20 			 
 
-I define many nice messages that deal with point such as: 
-- arithmetic such as \+, \*, reciprocal, min, abs,
-- comparison \&lt;, \&lt;=, \=, \&gt;, \&gt;=, closeTo: 
-- geometry such as sideOf:, to:intersects:to:, 
-- polar coordinates,
-- extent such as scaleTo:
-- transformation such as negated, translatedBy:, scaleBy:
-- rounding with roundTo:, roundUpTo:, truncateTo:, truncated
-</code></pre>
+    I define many nice messages that deal with point such as: 
+    - arithmetic such as \+, \*, reciprocal, min, abs,
+    - comparison \&lt;, \&lt;=, \=, \&gt;, \&gt;=, closeTo: 
+    - geometry such as sideOf:, to:intersects:to:, 
+    - polar coordinates,
+    - extent such as scaleTo:
+    - transformation such as negated, translatedBy:, scaleBy:
+    - rounding with roundTo:, roundUpTo:, truncateTo:, truncated
+</code><div class="named-fence-filename">Point</div></pre>
 <p>How cool is that? That makes me wanna take Point for a coffee.<br>
 I have adopted this style of documentation for just about everything.</p>
 <h2>Inbuilt support for documentation</h2>
