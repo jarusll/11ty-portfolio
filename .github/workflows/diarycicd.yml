@@ -1,0 +1,14 @@
+name: Listen for diary events
+
+on:
+  repository_dispatch:
+    types: [diary_push]
+
+jobs:
+  build:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello
+        run: |
+          echo Hello World
