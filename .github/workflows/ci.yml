@@ -25,6 +25,12 @@ jobs:
       working-directory: ./src
       run: |
         git clone https://github.com/jarusll/posts.git
+
+    - name: Clone diary
+      working-directory: ./src
+      run: |
+        git clone https://github.com/jarusll/diary.git
+        
     - name: yarn build
       run: |
         yarn run build
