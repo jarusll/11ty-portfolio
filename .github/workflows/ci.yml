@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       with:
+        ref: master
         submodules: true # recursive checkout
         
     - name: Use Node.js 14.x
