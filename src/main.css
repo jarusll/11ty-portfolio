@@ -83,6 +83,33 @@ code {
     font-size: 0.8rem;
 }
 
+#photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+figure {
+    width: 60%;
+    margin-bottom: 1rem;
+}
+
+figure span {
+}
+
+#photos img {
+	object-fit: contain;
+	width: 100%;
+}
+
+figcaption {
+    font-style: italic;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* desktop style */
 body {
     display: flex;
@@ -105,6 +132,9 @@ article {
     img {
 	max-width: 350px;
 	object-fit: contain !important;
+    }
+    figure {
+	width: 100%;
     }
 }
 

@@ -1,3 +1,24 @@
 {
-    "items": ["200/300", "300/250", "400/200", "350", "200/300", "300/250", "400/200", "350", "200/300", "300/250", "400/200", "350"]
+    "items": [
+	{
+	    "name" : "io",
+	    "url" : "https://raw.githubusercontent.com/jarusll/artworks/main/io/io.gif",
+	    "description": "*portal song*"
+	},
+	{
+	    "name" : "Oracle's back thingy",
+	    "url" : "https://raw.githubusercontent.com/jarusll/artworks/main/oracle/Sprite-0001.svg",
+	    "description": "Could go either ways"
+	},
+	{
+	    "name" : "i3wm",
+	    "url" : "https://raw.githubusercontent.com/jarusll/artworks/main/recursion/i3wm.svg",
+	    "description": "And away we g(And away we (And away (And...))"
+	},
+	{
+	    "name" : "bonfire",
+	    "url" : "https://raw.githubusercontent.com/jarusll/artworks/main/bonfire/bonfire.svg",
+	    "description": ""
+	}
+    ]
 }
