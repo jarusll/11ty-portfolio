@@ -4,7 +4,7 @@ layout: layouts/home.html
 ---
 <user-avatar 
     name="SURAJ YADAV" 
-    image="/images/profile_bw.jpg" 
+    image="/images/profile_bw.webp" 
     title="Oddball Software Creator and a Hobbyist Artist">
 </user-avatar>
 
