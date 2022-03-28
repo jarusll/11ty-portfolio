@@ -10,6 +10,6 @@ layout: layouts/home.html
 
 <hr />
 
-{% for post in collections.posts %}
+{% for post in collections.posts | reverse %}
 <a href="{{post.url}}">{{post.data.title}}</a>
 {% endfor %}
