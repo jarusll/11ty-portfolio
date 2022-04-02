@@ -2,7 +2,10 @@ module.exports = config => {
 
     config.addPassthroughCopy({
 	"./src/main.css": "main.css",
-	"./src/posts/images/*": "images"
+	"./src/posts/images/*": "images",
+	"./src/diary/*.png": "images",
+	"./src/diary/*.jpg": "images",
+	"./src/diary/*.webp": "images"
     });
 
     config.addCollection("posts", function(collectionApi) {
