@@ -98,6 +98,10 @@ figure {
 figure span {
 }
 
+img {
+    width: 100%;
+}
+
 #photos img {
 	object-fit: contain;
 	width: 100%;
