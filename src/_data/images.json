@@ -1,6 +1,11 @@
 {
     "items": [
 	{
+		"name" : "Portal Companion Cube",
+		"url" : "https://raw.githubusercontent.com/jarusll/artworks/main/companion_cube/cube.svg",
+		"description": ""
+	},
+	{
 	    "name" : "io",
 	    "url" : "https://raw.githubusercontent.com/jarusll/artworks/main/io/io.gif",
 	    "description": "*portal song*"
