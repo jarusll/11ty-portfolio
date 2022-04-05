@@ -28,9 +28,9 @@ jobs:
 
     - name: Pull latest submodules
       run: |
-        git pull --recurse-submodules
-        # git submodule  update --init --recursive --remote 
-
+        # git submodule  update --init --recursive --remote
+        git submodule update --init --recursive
+        git submodule update --recursive --remote
         
     - name: yarn build
       run: |
