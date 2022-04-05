@@ -3,7 +3,7 @@ name: build page
 on:
   workflow_dispatch:
   repository_dispatch: # build on diary_push
-    types: [diary_push, posts_push]
+    types: [diary_push, posts_push, fragments_push]
   push:
     branches:    
       - master 
