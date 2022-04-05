@@ -8,5 +8,5 @@
 	branch = main
 [submodule "src/fragments"]
 	path = src/fragments
-	url = git@github.com:jarusll/fragments.git
+	url = https://github.com/jarusll/diary.git
 	branch = master
