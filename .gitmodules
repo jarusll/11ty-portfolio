@@ -6,3 +6,6 @@
 	path = src/diary
 	url = https://github.com/jarusll/diary.git
 	branch = main
+[submodule "src/fragments"]
+	path = src/fragments
+	url = git@github.com:jarusll/fragments.git
