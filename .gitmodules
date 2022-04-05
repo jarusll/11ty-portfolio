@@ -9,3 +9,4 @@
 [submodule "src/fragments"]
 	path = src/fragments
 	url = git@github.com:jarusll/fragments.git
+	branch = master
