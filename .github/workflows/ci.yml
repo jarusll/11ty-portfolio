@@ -28,8 +28,6 @@ jobs:
 
     - name: Pull latest submodules
       run: |
-        # git submodule  update --init --recursive --remote
-        git submodule foreach --recursive git reset --hard
         git submodule update --init --recursive
         git submodule update --recursive --remote
         
