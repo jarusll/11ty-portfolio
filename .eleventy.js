@@ -8,8 +8,14 @@ module.exports = config => {
 	"./src/diary/*.webp": "images"
     });
 
+    // posts collection
     config.addCollection("posts", function(collectionApi) {
 	return collectionApi.getFilteredByGlob("./src/posts/*.md");
+    });
+
+    // fragments collection
+    config.addCollection("fragments", function(collectionApi) {
+	return collectionApi.getFilteredByGlob("./src/fragments/*.md");
     });
 
     // set markdown footnote processor
