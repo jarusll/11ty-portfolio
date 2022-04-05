@@ -127,6 +127,23 @@ article {
     width: 50%;
 }
 
+.tag {
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+    margin-right: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.youtube-tag {
+    background: #FF0000;
+    color: white;
+}
+
+.updates-tag {
+    background: #008c76;
+    color: white;
+}
+
 /* mobile */
 @media screen and (max-width: 600px) {
     article {
