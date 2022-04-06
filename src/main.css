@@ -149,6 +149,11 @@ article {
     color: white;
 }
 
+.checkout-tag {
+    background: #ffdf00;
+    color: black;
+}
+
 /* mobile */
 @media screen and (max-width: 600px) {
     article {
