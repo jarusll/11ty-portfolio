@@ -154,6 +154,14 @@ article {
     color: black;
 }
 
+.fragment-item {
+    margin-top: 1rem;
+}
+
+.fragment-item:last-of-type hr {
+    background: transparent !important;    
+}
+
 /* mobile */
 @media screen and (max-width: 600px) {
     article {
