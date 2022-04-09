@@ -4,7 +4,7 @@ layout: layouts/home.html
 ---
 
 {% for fragment in collections.fragments | reverse %}
-
+<div class="fragment-item">
 {% for tag in fragment.data.tags %}
 <span class="tag {{tag}}-tag">
 {{ tag }}
@@ -13,5 +13,7 @@ layout: layouts/home.html
 
 <a href="{{fragment.url}}">{{fragment.data.title}}</a>
 
-<hr />
+<hr class="hr"/>
+</div>
 {% endfor %}
+
