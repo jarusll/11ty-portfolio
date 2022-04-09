@@ -34,6 +34,13 @@ module.exports = config => {
     // set the library to process markdown files
     config.setLibrary("md", markdownLib);
 
+    // FILTERS
+    config.addFilter("makeUrl", function({id, url}) {
+	if (id)
+	    return "https://drive.google.com/uc?export=view&id=" + id
+	return url
+    });
+
     return {
 	passthroughFileCopy: true,
         markdownTemplateEngine: 'njk',
