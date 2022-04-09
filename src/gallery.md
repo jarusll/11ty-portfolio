@@ -7,7 +7,7 @@ layout: layouts/home.html
 {% for image in images.items %}
 <figure>
 	<span>{{image.name}}</span>
-	<img src="{{image.url}}" alt="{{image.description}}">
+	<img src="{{image | makeUrl}}" alt="{{image.description}}">
 	<figcaption>{{image.description}}</figcaption>
 </figure>
 {% endfor %}
