@@ -2,10 +2,11 @@ FROM node
 
 MAINTAINER Suraj Yadav <ysuraj877@gmail.com>
 
-COPY . .
+WORKDIR /app
 
-WORKDIR .
+COPY . /app
 
+RUN cd /app
 RUN yarn install
 
 EXPOSE 8080
