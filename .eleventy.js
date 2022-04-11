@@ -7,10 +7,10 @@ module.exports = config => {
 	"./src/diary/*.jpg": "images",
 	"./src/diary/*.jpeg": "images",
 	"./src/diary/*.webp": "images",
-	"./src/fragments/*.png": "images",
-	"./src/fragments/*.jpg": "images",
-	"./src/fragments/*.jpeg": "images",
-	"./src/fragments/*.webp": "images"
+	"./src/fragments/images/*.png": "images",
+	"./src/fragments/images/*.jpg": "images",
+	"./src/fragments/images/*.jpeg": "images",
+	"./src/fragments/images/*.webp": "images"
     });
 
     // posts collection
