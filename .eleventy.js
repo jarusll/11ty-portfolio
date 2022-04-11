@@ -5,7 +5,12 @@ module.exports = config => {
 	"./src/posts/images/*": "images",
 	"./src/diary/*.png": "images",
 	"./src/diary/*.jpg": "images",
-	"./src/diary/*.webp": "images"
+	"./src/diary/*.jpeg": "images",
+	"./src/diary/*.webp": "images",
+	"./src/fragments/*.png": "images",
+	"./src/fragments/*.jpg": "images",
+	"./src/fragments/*.jpeg": "images",
+	"./src/fragments/*.webp": "images"
     });
 
     // posts collection
