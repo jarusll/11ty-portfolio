@@ -168,6 +168,17 @@ article {
     background: transparent !important;    
 }
 
+/* page styles */
+
+.page-diary h1 {
+    text-decoration: underline;
+    font-size: 2rem;
+    background: #008080;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+
 /* mobile */
 @media screen and (max-width: 600px) {
     article {
