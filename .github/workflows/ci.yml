@@ -36,8 +36,19 @@ jobs:
       run: |
         yarn run build
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4.2.5
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: docs # The folder the action should deploy.
+    # - name: Deploy
+    #   uses: JamesIves/github-pages-deploy-action@v4.2.5
+    #   with:
+    #     branch: gh-pages # The branch the action should deploy to.
+    #     folder: docs # The folder the action should deploy.
+
+    - name: Deploy to GitHub Pages
+      uses: Cecilapp/GitHub-Pages-deploy@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
+        with:
+          email: ysuraj877@gmail.com
+          build_dir: docs
+          branch: gh-pages
+          jekyll: no                     
+          commit_message: build pushed to gh-pages
