@@ -4,11 +4,7 @@ MAINTAINER Suraj Yadav <ysuraj877@gmail.com>
 
 WORKDIR /app
 
-COPY . /app
+COPY package.json /app
+COPY yarn.lock /app
 
-RUN cd /app
 RUN yarn install
-
-EXPOSE 8080
-
-ENTRYPOINT yarn serve
