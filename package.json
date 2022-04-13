@@ -1,27 +1,28 @@
 {
-    "name": "suraj-portfolio",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-	"serve": "yarn eleventy --serve",
-	"build": "yarn eleventy"
-    },
-    "repository": {
-	"type": "git",
-	"url": "git+https://github.com/jarusll/portfolio.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-	"url": "https://github.com/jarusll/portfolio/issues"
-    },
-    "homepage": "https://github.com/jarusll/portfolio#readme",
-    "dependencies": {
-	"@11ty/eleventy": "^1.0.0",
-	"@jarusll/user-avatar": "^1.2.0",
-	"markdown-it-footnote": "^3.0.3",
-	"markdown-it-named-code-blocks": "^0.1.0"
-    }
+   "name": "suraj-portfolio",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "serve": "yarn eleventy --serve",
+      "build": "yarn eleventy"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jarusll/portfolio.git"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/jarusll/portfolio/issues"
+   },
+   "homepage": "https://github.com/jarusll/portfolio#readme",
+   "dependencies": {
+      "@11ty/eleventy": "^1.0.0",
+      "@jarusll/user-avatar": "^1.2.0",
+      "markdown-it-checkbox": "^1.1.0",
+      "markdown-it-footnote": "^3.0.3",
+      "markdown-it-named-code-blocks": "^0.1.0"
+   }
 }

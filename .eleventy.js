@@ -27,6 +27,7 @@ module.exports = config => {
     const markdownIt = require("markdown-it");
     const markdownItFootnote = require("markdown-it-footnote");
     const namedCodeBlocks = require('markdown-it-named-code-blocks');
+    const checkbox = require('markdown-it-checkbox');
  
     const options = {
 	html: true, // Enable HTML tags in source
@@ -35,7 +36,7 @@ module.exports = config => {
     };
     
     // configure the library with options
-    const markdownLib =  markdownIt(options).use(markdownItFootnote).use(namedCodeBlocks);
+    const markdownLib =  markdownIt(options).use(markdownItFootnote).use(namedCodeBlocks).use(checkbox);
     // set the library to process markdown files
     config.setLibrary("md", markdownLib);
 
