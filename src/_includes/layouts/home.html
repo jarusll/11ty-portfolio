@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-<article>
+<article class="page-{{page.fileSlug}}">
   {{ content | safe }}
 </article>
 {% endblock %}
