@@ -22,7 +22,10 @@
 
     
 <article class="page-mirroring-my-repos">
-  <p>On 13th of April, 2022 I was stuck with a ref lock thing with my portfolio repo. It was really dirty one and the only way I solved it was importing the repo to bitbucket &amp; reimporting it back. Made me think about backups.</p>
+  <h1>Mirroring my github repos to bitbucket</h1>
+<h2>Update:</h2>
+<p>You might wanna take a look at <code>git ... --mirror</code></p>
+<p>On 13th of April, 2022 I was stuck with a ref lock thing with my portfolio repo. It was really dirty one and the only way I solved it was importing the repo to bitbucket &amp; reimporting it back. Made me think about backups.</p>
 <p>Fortunately, I was tinkering with Ansible<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. It was a good learning opporunity, mirror my repos using Ansible and I did it.</p>
 <p>Pretty sure this isn't the best way to achieve this but it works.</p>
 <p>Here's the code, Its cronified for every hour on my vps.</p>
