@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirroring my github repos to bitbucket</title>
+    <link rel="stylesheet" href="/main.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@jarusll/user-avatar@1.2.0/src/index.min.js"></script>
+</head>
+
+<body>
+    <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/diary">Diary</a></li>
+	<li><a href="/fragments">Fragments</a></li>	
+    </ul>
+</nav>
+
+    
+<article class="page-mirroring-my-repos">
+  <p>On 13th of April, 2022 I was stuck with a ref lock thing with my portfolio repo. It was really dirty one and the only way I solved it was importing the repo to bitbucket &amp; reimporting it back. Made me think about backups.</p>
+<p>Fortunately, I was tinkering with Ansible<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>. It was a good learning opporunity, mirror my repos using Ansible and I did it.</p>
+<p>Pretty sure this isn't the best way to achieve this but it works.</p>
+<p>Here's the code, Its cronified for every hour on my vps.</p>
+<pre><code class="language-yaml">- name: Mirror github to bitbucket
+  # hosts: gcp
+  hosts: localhost
+  connection: local
+  
+  vars:
+    git_username: &quot;jarusll&quot;
+    git_dir: &quot;~/source/ansible_clones&quot;
+    prefix:
+      github: &quot;git@github.com&quot;
+      bitbucket: &quot;git@bitbucket.org&quot;
+    remote:
+      github: &quot;origin&quot;
+      bitbucket: &quot;bit&quot;
+    repos:
+      - jarusll.github.io
+      - diary
+      - posts
+      - fragments
+      - artworks
+      - dotfiles
+      
+  tasks:
+    - name: Clone all repos from github
+      ansible.builtin.git:
+        repo: &quot;:/.git&quot;
+        clone: yes
+        dest: &quot;/&quot;
+        update: yes
+      register: repo
+      loop: &quot;&quot;
+
+    - name: Add bitbucket remotes to all repos
+      ansible.builtin.shell:
+        cmd: &quot;git remote add  :/.git&quot;
+        chdir: &quot;/&quot;
+      loop: &quot;&quot;
+      ignore_errors: yes
+
+    - name: Push to bitbucket
+      ansible.builtin.shell:
+        cmd: &quot;git push bit&quot;
+        chdir: &quot;/&quot;
+      loop: &quot;&quot;
+      ignore_errors: yes
+
+</code></pre>
+<p>Check out my <a href="https://github.com/jarusll/ansible-playground">Ansible playground repo</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.ansible.com">https://www.ansible.com</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+
+    <hr />
+<footer>
+    
+    <a href="https://github.com/jarusll" target="_blank">Github</a>
+    
+    <a href="https://www.linkedin.com/in/suraj-yadav-98794b62/" target="_blank">LinkedIn</a>
+    
+    <a href="mailto:ysuraj877@gmail.com" target="_blank">Email</a>
+    
+</footer>
+
+</body>
+
+</html>
