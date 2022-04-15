@@ -160,6 +160,11 @@ article {
     color: white;
 }
 
+.solution-tag {
+    background: #138808;
+    color: white;
+}
+
 .fragment-item {
     margin-top: 1rem;
 }
