@@ -169,6 +169,11 @@ article {
     color: white;
 }
 
+.hardware-tag {
+    background: #505050;
+    color: white;
+}
+
 .fragment-item {
     margin-top: 1rem;
 }
